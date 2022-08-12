@@ -7,8 +7,7 @@ export class App {
 
     constructor(){
         this.server = express ();
-
-        
+        this.setConfig();
     }
 
     private setConfig(){
