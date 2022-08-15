@@ -8,19 +8,19 @@ on:
     check-lint:
       runs-on: ubuntu-latest
       steps:
-        - uses: szenius/set-timezone@v1.0
+        -uses: szenius/set-timezone@v1.0
           with:
             timezoneLinux: 'America/Sao_Paulo'
 
         - uses: actions/checkout@v2
 
-        - name: Set up Node
+        - name: Set up node
           uses: actions/setup-node@v2
           with:
             node-version: 18.4.0
 
       - run: npm ci --legacy-peer-deps
-      - run: npm run lint
+
 
       - name: Cancel workflow
         if: failure()
@@ -41,4 +41,4 @@ on:
             node-version: 18.4.0
 
       - run: npm ci --legacy-peer-deps
-      - run: npm run lint
+
